@@ -35,7 +35,7 @@ therefore, we seek to provide an automated and reliable attendance system using 
 #### Installation
 Download or Clone the project on your local machine.
 ```
-$ git clone https://github.com/hisham-maged10/path-finder.git
+$ git clone https://github.com/ak55m/face-attendace-app.git
 ```
 After downloading or cloning, create an python enviroment for the project. To create virtual enviorment open the terminal or command line, `cd` into the project directory.
 ```
@@ -49,6 +49,30 @@ $ source env/bin/activate
 *Notice:* If your pc don't have virtual enviroment or pip install the follow this link. [How to create Virtual Enviroment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/ "How to create Virtual Enviroment")
 
 After creating the enviroment for the project now it is time to install the necessary python dependencies.
+
+#### Essential Model Files
+**IMPORTANT:** The following model files are essential for the application to work but are not included in this repository due to their large size (110MB total):
+
+- `models/landmarks.dat` (~95MB) - Facial landmarks detection model
+- `models/open_face.h5` (~15MB) - OpenFace neural network model
+
+**You must obtain these files before running the application.** You can:
+
+1. **Download them separately** from the original source or model repositories
+2. **Use your own trained models** if you have them
+3. **Train/download the models** using the appropriate tools:
+   - For `landmarks.dat`: Download from dlib's facial landmarks predictor
+   - For `open_face.h5`: Download or train using OpenFace framework
+
+**Note:** Make sure to place these files in the `models/` directory after cloning the repository. The `models/` directory structure should look like:
+```
+models/
+├── landmarks.dat
+└── open_face.h5
+```
+
+Without these files, the face recognition features will not work.
+
 #### Dependencies
 - Dlib
 - Tensorflow
